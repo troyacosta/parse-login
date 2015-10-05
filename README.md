@@ -35,7 +35,9 @@ After completing this assignment, you be able to effectively use
 
 
 ## Normal Mode
-Fork and clone this repository. After cloning, cd into the new directory and run the `tiyfe` command.
+Fork and clone this repository. After cloning, cd into the new directory and run the tiyfe command.
+
+You will need to add your own parse API tokens using `Parse.initialize(...)` in the scripts/main.js file in order for this code to work.
 
 In this assignment you will implement a log in page component that checkd a username / password combination using parse. If an error is returned from parse (ie. the username is incorrect, the password is incorrect, or anything else) the error should be shown on your registration page. If the user successfully logs in, you should redirect the user to the dashboard page.
 
