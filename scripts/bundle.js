@@ -32606,7 +32606,7 @@ module.exports = React.createClass({
 					),
 					React.createElement(
 						"p",
-						null,
+						{ className: "red-text" },
 						this.state.error
 					),
 					React.createElement(
@@ -32749,7 +32749,7 @@ module.exports = React.createClass({
 		if (this.state.error) {
 			errorElement = React.createElement(
 				"p",
-				{ className: "red" },
+				{ className: "red-text" },
 				this.state.error
 			);
 		}
@@ -32860,7 +32860,11 @@ var Router = Backbone.Router.extend({
 		React.render(React.createElement(HomeComponent, null), app);
 	},
 	dashboard: function dashboard() {
-		React.render(React.createElement(DashboardComponent, null), app);
+		if (Parse.User.current()) {
+			React.render(React.createElement(DashboardComponent, null), app);
+		} else {
+			this.navigate('login', { trigger: true });
+		}
 	},
 	login: function login() {
 		React.render(React.createElement(LoginComponent, { router: r }), app);

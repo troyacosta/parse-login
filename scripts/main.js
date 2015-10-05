@@ -29,7 +29,12 @@ var Router = Backbone.Router.extend({
 		React.render(<HomeComponent />, app);
 	},
 	dashboard: function() {
-		React.render(<DashboardComponent />, app);
+		if(Parse.User.current()) {
+			React.render(<DashboardComponent />, app);
+		}
+		else {
+			this.navigate('login', {trigger: true});
+		}
 	},
 	login: function() {
 		React.render(<LoginComponent router={r} />, app);

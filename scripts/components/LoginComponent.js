@@ -10,7 +10,7 @@ module.exports = React.createClass({
 				<div className="row">
 					<form className="col s12" onSubmit={this.onLogin}>
 						<h1>Login</h1>
-						<p>{this.state.error}</p>
+						<p className="red-text">{this.state.error}</p>
 						<div className="row">
 							<div className="input-field col s12">
 								<input type="text" ref="email" className="validate" id="email_address" />

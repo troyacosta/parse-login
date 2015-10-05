@@ -8,7 +8,7 @@ module.exports = React.createClass({
 		var errorElement = null;
 		if(this.state.error) {
 			errorElement = (
-				<p className="red">{this.state.error}</p>
+				<p className="red-text">{this.state.error}</p>
 			);
 		}
 		return (
