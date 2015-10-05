@@ -32547,7 +32547,7 @@ module.exports = React.createClass({
 				React.createElement(
 					"h1",
 					null,
-					"Home"
+					"Dashboard"
 				)
 			)
 		);
@@ -32572,7 +32572,7 @@ module.exports = React.createClass({
 				React.createElement(
 					"h1",
 					null,
-					"Login"
+					"Home"
 				)
 			)
 		);
@@ -32590,11 +32590,36 @@ module.exports = React.createClass({
 	render: function render() {
 		return React.createElement(
 			"div",
+			{ className: "container" },
+			React.createElement(
+				"div",
+				{ className: "row" },
+				React.createElement(
+					"h1",
+					null,
+					"Login"
+				)
+			)
+		);
+	}
+});
+
+},{"react":159}],163:[function(require,module,exports){
+"use strict";
+
+var React = require('react');
+
+module.exports = React.createClass({
+	displayName: "exports",
+
+	render: function render() {
+		return React.createElement(
+			"div",
 			{ className: "nav-wrapper" },
 			React.createElement(
 				"a",
 				{ href: "#", className: "brand-logo left" },
-				"Registration Example"
+				"Login Example"
 			),
 			React.createElement(
 				"ul",
@@ -32606,6 +32631,15 @@ module.exports = React.createClass({
 						"a",
 						{ href: "#" },
 						"Home"
+					)
+				),
+				React.createElement(
+					"li",
+					null,
+					React.createElement(
+						"a",
+						{ href: "#dashboard" },
+						"Dashboard"
 					)
 				),
 				React.createElement(
@@ -32631,7 +32665,7 @@ module.exports = React.createClass({
 	}
 });
 
-},{"react":159}],163:[function(require,module,exports){
+},{"react":159}],164:[function(require,module,exports){
 "use strict";
 
 var React = require('react');
@@ -32729,7 +32763,7 @@ module.exports = React.createClass({
 	}
 });
 
-},{"react":159}],164:[function(require,module,exports){
+},{"react":159}],165:[function(require,module,exports){
 'use strict';
 var React = require('react');
 var Backbone = require('backbone');
@@ -32738,6 +32772,7 @@ window.jQuery = $;
 
 var NavigationComponent = require('./components/NavigationComponent');
 var HomeComponent = require('./components/HomeComponent');
+var DashboardComponent = require('./components/DashboardComponent');
 var LoginComponent = require('./components/LoginComponent');
 var RegisterComponent = require('./components/RegisterComponent');
 
@@ -32748,11 +32783,15 @@ React.render(React.createElement(NavigationComponent, null), document.getElement
 var Router = Backbone.Router.extend({
 	routes: {
 		'': 'home',
+		'dashboard': 'dashboard',
 		'login': 'login',
 		'register': 'register'
 	},
 	home: function home() {
 		React.render(React.createElement(HomeComponent, null), app);
+	},
+	dashboard: function dashboard() {
+		React.render(React.createElement(DashboardComponent, null), app);
 	},
 	login: function login() {
 		React.render(React.createElement(LoginComponent, null), app);
@@ -32765,7 +32804,7 @@ var Router = Backbone.Router.extend({
 var r = new Router();
 Backbone.history.start();
 
-},{"./components/HomeComponent":160,"./components/LoginComponent":161,"./components/NavigationComponent":162,"./components/RegisterComponent":163,"backbone":1,"jquery":4,"react":159}]},{},[164])
+},{"./components/DashboardComponent":160,"./components/HomeComponent":161,"./components/LoginComponent":162,"./components/NavigationComponent":163,"./components/RegisterComponent":164,"backbone":1,"jquery":4,"react":159}]},{},[165])
 
 
 //# sourceMappingURL=bundle.js.map
