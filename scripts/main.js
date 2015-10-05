@@ -1,4 +1,5 @@
 'use strict';
+Parse.initialize('SF7CSqlj4DZUMd8AejUWY7Ankd5IdQwXnGIhwpjg', 'yyuhQ8AbidgVlwYgGCYd7o2i74VWAcgOAMX1mx9v');
 var React = require('react');
 var Backbone = require('backbone');
 window.$ = require('jquery');
@@ -31,7 +32,7 @@ var Router = Backbone.Router.extend({
 		React.render(<DashboardComponent />, app);
 	},
 	login: function() {
-		React.render(<LoginComponent />, app);
+		React.render(<LoginComponent router={r} />, app);
 	},
 	register: function() {
 		React.render(<RegisterComponent router={r} />, app);
